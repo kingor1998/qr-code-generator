@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>二维码生成器</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+<style>
+body{
+font-family:Arial;
+text-align:center;
+margin-top:60px;
+background:#eef2ff;
+}
+
+input{
+padding:10px;
+width:300px;
+}
+
+button{
+padding:10px 20px;
+margin-left:10px;
+cursor:pointer;
+}
+
+#qrcode{
+margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+<h1>免费二维码生成器</h1>
+<p>输入任何文字或网址，一键生成二维码</p>
+
+<input id="text" placeholder="输入内容">
+<button onclick="generate()">生成二维码</button>
+
+<div id="qrcode"></div>
+
+<script>
+
+function generate(){
+
+document.getElementById("qrcode").innerHTML="";
+
+var text=document.getElementById("text").value;
+
+new QRCode(document.getElementById("qrcode"),{
+text:text,
+width:200,
+height:200
+});
+
+}
+
+</script>
+
+</body>
+</html>
